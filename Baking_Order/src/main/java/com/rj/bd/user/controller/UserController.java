@@ -11,5 +11,6 @@ import com.rj.bd.user.service.IUserService;
 @RequestMapping("/user")
 public class UserController {
 	
+	//就提交这里吧
 	public IUserService userService;
 }
