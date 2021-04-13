@@ -33,6 +33,8 @@ public class ManagerController {
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		System.out.println("username:"+username);
+		System.out.println("password:"+password);
 		
 		if (username==null||username.equals("")) {
 			json.put("code", -1);
