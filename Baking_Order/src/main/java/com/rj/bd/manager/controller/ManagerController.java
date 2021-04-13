@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,17 @@ public class ManagerController {
 	public IManagerService managerService;
 	
 	@RequestMapping("/login")
-	public Map<String, Object> login(HttpServletRequest request){
+	public Map<String, Object> login(HttpServletRequest request,HttpServletResponse response){
+		
+		// 指定允许其他域名访问
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		// 跨域 Header
+		response.setHeader("Access-Control-Allow-Headers", "*");
+		// 允许请求的类型 post get 这些
+		response.setHeader("Access-Control-Allow-Methods", "*");
+		response.setCharacterEncoding("utf-8");
+		// 设置返回的文件类型
+		response.setContentType("application/json;charset=UTF-8");
 		
 		Map<String, Object> json = new HashMap<String, Object>();
 		

@@ -28,8 +28,15 @@ public interface IPayService {
 
 	/**
 	 * @param id 
+	 * @return 
 	 * @desc  查询一条
 	 */
-	void queryPayById(String id);
+	Map queryPayById(String id);
+	
+	/**
+	 * @desc 修改支付方式
+	 * @param pay
+	 */
+	void editPay(Pay pay);
 
 }

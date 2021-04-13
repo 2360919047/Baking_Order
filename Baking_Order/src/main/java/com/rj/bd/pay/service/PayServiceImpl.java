@@ -30,8 +30,15 @@ public class PayServiceImpl implements IPayService{
 		payMapper.deletePay(pay);
 	}
 
-	public void queryPayById(String id) {
-		payMapper.editPayById(id);
+	public Map queryPayById(String id) {
+		
+		return payMapper.editPayById(id);
+		
+	}
+
+	public void editPay(Pay pay) {
+		
+		payMapper.editPay(pay);
 		
 	}
 

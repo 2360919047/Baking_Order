@@ -19,6 +19,9 @@ public interface PayMapper {
 	void deletePay(Pay pay);
 
 	@Select("select * from pay where pay_id=#{id}")
-	void editPayById(String id);
+	Map editPayById(String id);
+	
+	@Select("update pay set pay_name=#{pay_name},remarks=#{remarks} where pay_id=#{pay_id}")
+	void editPay(Pay pay);
 
 }
